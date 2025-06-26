@@ -1,16 +1,16 @@
-# Use official Golang image
+# Use official Go image
 FROM golang:1.21
 
 # Set working directory
 WORKDIR /app
 
-# Copy all Go files
+# Copy all files
 COPY . .
 
-# Build the Go app
-RUN go build -o out main.go
+# Build the app (IMPORTANT: don’t specify just main.go!)
+RUN go build -o out
 
-# Expose port (matches your main.go default)
+# Expose the port your app runs on
 EXPOSE 8080
 
 # Run the app
